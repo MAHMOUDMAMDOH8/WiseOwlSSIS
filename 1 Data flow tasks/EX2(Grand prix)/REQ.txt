@@ -1,0 +1,1 @@
+SSIS Integration Services | Data flow tasks exercise | Generate a new text file by exporting a SQL Server table of Grand Prix venues into it

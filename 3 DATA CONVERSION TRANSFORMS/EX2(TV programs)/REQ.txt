@@ -1,0 +1,1 @@
+SSIS Integration Services | Data conversion transforms exercise | Use data conversion and union all transforms to combine two data sources (Excel and CSV) into a single table

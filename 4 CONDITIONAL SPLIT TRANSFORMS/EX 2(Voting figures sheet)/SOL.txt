@@ -1,0 +1,382 @@
+187796,64498,Remain,City of Edinburgh,123298
+440707,349442,Remain,Northern Ireland,91265
+168335,84474,Remain,Glasgow City,83861
+111584,30340,Remain,Lambeth,81244
+118463,39421,Remain,Wandsworth,79042
+56780,118446,Leave,Dudley,61666
+83398,22868,Remain,Hackney,60530
+94293,35209,Remain,Southwark,59084
+46922,104260,Leave,Doncaster,57338
+58877,116165,Leave,Wakefield,57288
+42201,96885,Leave,Havering,54684
+100648,46027,Remain,Brighton and Hove,54621
+79991,25855,Remain,Haringey,54136
+141027,87418,Remain,Bristol, City of,53609
+76420,25180,Remain,Islington,51240
+86955,37518,Remain,Lewisham,49437
+49004,98250,Leave,Sandwell,49246
+44115,93272,Leave,Rotherham,49157
+43572,92007,Leave,Walsall,48435
+71295,23838,Remain,Camden,47457
+36027,81563,Leave,Stoke-on-Trent,45536
+58942,104331,Leave,Wigan,45389
+38951,83958,Leave,Barnsley,45007
+102568,60024,Remain,South Lanarkshire,42544
+140540,182665,Leave,Cornwall,42125
+75396,33410,Remain,Richmond upon Thames,41986
+121823,79991,Remain,Manchester,41832
+78779,120136,Leave,East Riding of Yorkshire,41357
+113521,153877,Leave,County Durham,40356
+36709,76646,Leave,Kingston upon Hull, City of,39937
+100210,60823,Remain,Barnet,39387
+49889,88997,Leave,Medway,39108
+73011,35224,Remain,Tower Hamlets,37787
+30748,67251,Leave,Basildon,36503
+95549,59400,Remain,North Lanarkshire,36149
+22151,57765,Leave,Thurrock,35614
+101788,67816,Remain,Cardiff,33972
+118453,85101,Remain,Liverpool,33352
+47603,80886,Leave,Bexley,33283
+23515,56613,Leave,East Lindsey,33098
+25210,57447,Leave,Tendring,32237
+56188,24054,Remain,Hammersmith and Fulham,32134
+23797,55185,Leave,North East Lincolnshire,31388
+106754,75466,Remain,Fife,31288
+90024,59017,Remain,Ealing,31007
+51930,82394,Leave,Sunderland,30464
+53928,24268,Remain,Westminster,29660
+44138,73798,Leave,Wolverhampton,29660
+29947,58915,Leave,North Lincolnshire,28968
+49424,20913,Remain,Oxford,28511
+28587,56493,Leave,King's Lynn and West Norfolk,27906
+42682,15117,Remain,Cambridge,27565
+44534,17840,Remain,East Dunbartonshire,26694
+20179,46720,Leave,Ashfield,26541
+53458,79997,Leave,Plymouth,26539
+57119,31010,Remain,Renfrewshire,26109
+63003,37097,Remain,Merton,25906
+39345,13596,Remain,East Renfrewshire,25749
+78987,104166,Leave,Shropshire,25179
+43118,67829,Leave,Tameside,24711
+32954,56649,Leave,Telford and Wrekin,23695
+72523,48881,Remain,Brent,23642
+38433,61982,Leave,Stockton-on-Tees,23549
+24586,48128,Leave,Redcar and Cleveland,23542
+14154,37691,Leave,Castle Point,23537
+16417,39927,Leave,Mansfield,23510
+21781,45146,Leave,Blackpool,23365
+13074,36423,Leave,South Holland,23349
+42034,65369,Leave,Oldham,23335
+63985,40729,Remain,Aberdeen City,23256
+57589,80491,Leave,Bolton,22902
+20575,43392,Leave,Bassetlaw,22817
+34193,56936,Leave,Arun,22743
+15055,37571,Leave,Fenland,22516
+23736,46095,Leave,Nuneaton and Bedworth,22359
+54208,32237,Remain,St Albans,21971
+14284,35844,Leave,Great Yarmouth,21560
+26313,47235,Leave,Breckland,20922
+41217,62014,Leave,Rochdale,20797
+37601,17138,Remain,Kensington and Chelsea,20463
+98485,118755,Leave,Kirklees,20270
+16684,36894,Leave,Cannock Chase,20210
+44148,64122,Leave,Herefordshire, County of,19974
+26065,46037,Leave,Thanet,19972
+27935,47889,Leave,Torbay,19954
+23444,43248,Leave,South Staffordshire,19804
+52533,32737,Remain,Kingston upon Thames,19796
+64156,44395,Remain,Waltham Forest,19761
+28676,48176,Leave,Epping Forest,19500
+69670,89134,Leave,Central Bedfordshire,19464
+104575,123913,Leave,Bradford,19338
+72293,53018,Remain,Trafford,19275
+33523,52713,Leave,Braintree,19190
+56128,37061,Remain,South Cambridgeshire,19067
+30014,49065,Leave,South Tyneside,19051
+34176,53216,Leave,Peterborough,19040
+21181,40177,Leave,Middlesbrough,18996
+30207,49173,Leave,Isle of Wight,18966
+28481,47388,Leave,Swale,18907
+19322,823,Remain,Gibraltar,18499
+27750,46130,Leave,Barking and Dagenham,18380
+14029,32071,Leave,Hartlepool,18042
+49641,31614,Remain,Perth and Kinross,18027
+25477,43457,Leave,Newcastle-under-Lyme,17980
+43805,61454,Leave,Northampton,17649
+63617,45983,Remain,York,17634
+21076,38684,Leave,Staffordshire Moorlands,17608
+12242,29730,Leave,Bolsover,17488
+26582,44047,Leave,Havant,17465
+51612,69043,Leave,Derby,17431
+17510,34937,Leave,Rochford,17427
+22816,40163,Leave,Wyre,17347
+47199,64541,Leave,New Forest,17342
+33112,15787,Remain,Stirling,17325
+67967,85097,Leave,Coventry,17130
+58040,74982,Leave,Hillingdon,16942
+24356,41290,Leave,Waveney,16934
+18876,35643,Leave,Gravesham,16767
+25570,42183,Leave,North Kesteven,16613
+17166,33706,Leave,Broxbourne,16540
+60878,44352,Remain,Bath and North East Somerset,16526
+22850,39266,Leave,East Staffordshire,16416
+33047,49424,Leave,South Kesteven,16377
+36026,19738,Remain,East Lothian,16288
+41384,57336,Leave,Portsmouth,15952
+76425,60481,Remain,Enfield,15944
+19985,35870,Leave,Dartford,15885
+24606,40410,Leave,Dover,15804
+13867,29602,Leave,Harlow,15735
+36762,52365,Leave,Maidstone,15603
+7430,22974,Leave,Boston,15544
+26545,41869,Leave,Sedgemoor,15324
+29319,44501,Leave,Amber Valley,15182
+39348,54522,Leave,Southend-on-Sea,15174
+22075,37235,Leave,North East Derbyshire,15160
+21240,36392,Leave,Wyre Forest,15152
+39322,54357,Leave,St. Helens,15035
+53466,68484,Leave,Solihull,15018
+70308,55349,Remain,Highland,14959
+47430,62385,Leave,Salford,14955
+25791,40739,Leave,Erewash,14948
+22884,37729,Leave,Shepway,14845
+13705,28424,Leave,Tamworth,14719
+92913,78221,Remain,Croydon,14692
+45841,31162,Remain,Elmbridge,14679
+82022,96699,Leave,Northumberland,14677
+51560,36948,Remain,West Lothian,14612
+22999,37512,Leave,Scarborough,14513
+42527,56940,Leave,South Somerset,14413
+14462,28854,Leave,Burnley,14392
+137258,151637,Leave,Wiltshire,14379
+47976,33642,Remain,Warwick,14334
+39178,53295,Leave,Caerphilly,14117
+44429,58529,Leave,Gateshead,14100
+35741,49707,Leave,Poole,13966
+26571,40516,Leave,Newark and Sherwood,13945
+76445,62516,Remain,Aberdeenshire,13929
+25969,39501,Leave,Hinckley and Bosworth,13532
+28314,41472,Leave,Ashford,13158
+65248,52117,Remain,Greenwich,13131
+55272,42229,Remain,Wokingham,13043
+13569,26568,Leave,Hyndburn,12999
+42878,29886,Remain,Winchester,12992
+39688,26697,Remain,Dundee City,12991
+20906,33847,Leave,West Lindsey,12941
+12569,25385,Leave,North Warwickshire,12816
+16671,29456,Leave,Gosport,12785
+44341,31601,Remain,Waverley,12740
+28822,41544,Leave,Wrexham,12722
+22642,34969,Leave,North West Leicestershire,12327
+23788,35895,Leave,Carlisle,12107
+46950,58975,Leave,Calderdale,12025
+32188,44201,Leave,Wychavon,12013
+43385,31382,Remain,Reading,12003
+16704,28631,Leave,Pendle,11927
+21030,32877,Leave,Kettering,11847
+22479,34216,Leave,South Derbyshire,11737
+22474,34135,Leave,Spelthorne,11661
+22946,34478,Leave,Chesterfield,11532
+26214,37576,Leave,North Norfolk,11362
+17303,28579,Leave,Redditch,11276
+26064,37214,Leave,Lichfield,11150
+36708,47773,Leave,Luton,11065
+37867,48930,Leave,Flintshire,11063
+36265,25241,Remain,South Ayrshire,11024
+37952,26962,Remain,Scottish Borders,10990
+26801,37776,Leave,Gloucester,10975
+28217,17251,Remain,Midlothian,10966
+27698,38655,Leave,Ipswich,10957
+26406,37318,Leave,South Ribble,10912
+64042,53183,Remain,Harrow,10859
+44987,34271,Remain,Falkirk,10716
+22888,33583,Leave,Blaby,10695
+24688,14010,Remain,Inverclyde,10678
+40522,29888,Remain,Rushcliffe,10634
+51220,61745,Leave,Swindon,10525
+26794,16426,Remain,West Dunbartonshire,10368
+32651,43001,Leave,Neath Port Talbot,10350
+29494,19202,Remain,Argyll and Bute,10292
+43462,33192,Remain,Vale of White Horse,10270
+15462,25679,Leave,Wellingborough,10217
+69213,59020,Remain,Redbridge,10193
+33891,23942,Remain,East Ayrshire,9949
+35517,25665,Remain,Gwynedd,9852
+23916,33753,Leave,Rother,9837
+52657,62487,Leave,Warrington,9830
+29367,39155,Leave,Pembrokeshire,9788
+14529,24302,Leave,Maldon,9773
+44155,34458,Remain,Guildford,9697
+27678,37327,Leave,Halton,9649
+21071,30532,Leave,Selby,9461
+19363,28781,Leave,Torfaen,9418
+22429,31809,Leave,Allerdale,9380
+34098,43386,Leave,Stafford,9288
+38394,29110,Remain,North Ayrshire,9284
+21680,30894,Leave,East Northamptonshire,9214
+11470,20611,Leave,Corby,9141
+14419,23528,Leave,Copeland,9109
+22388,31447,Leave,Crawley,9059
+41473,50453,Leave,Bournemouth,8980
+16229,25200,Leave,Torridge,8971
+24786,33702,Leave,East Dorset,8916
+21392,30251,Leave,Forest of Dean,8859
+32413,41236,Leave,Newport,8823
+44084,52808,Leave,Wealden,8724
+27417,36098,Leave,Chorley,8681
+53973,62590,Leave,Rhondda Cynon Taf,8617
+19077,27627,Leave,Brentwood,8550
+20443,28938,Leave,Daventry,8495
+74928,83405,Leave,South Gloucestershire,8477
+45729,54198,Leave,Huntingdonshire,8469
+18659,27126,Leave,Stevenage,8467
+14903,23352,Leave,Weymouth and Portland,8449
+32792,41229,Leave,Tonbridge and Malling,8437
+46245,37865,Remain,South Oxfordshire,8380
+13215,21587,Leave,Blaenau Gwent,8372
+9791,18160,Leave,Forest Heath,8369
+46354,54674,Leave,Bury,8320
+37326,29040,Remain,Norwich,8286
+28522,36799,Leave,Blackburn with Darwen,8277
+26986,35224,Leave,St Edmundsbury,8238
+49738,57927,Leave,Southampton,8189
+24931,33100,Leave,North Devon,8169
+15012,23169,Leave,Rossendale,8157
+37081,28932,Remain,Cheltenham,8149
+20384,28396,Leave,Rushmoor,8012
+49319,57241,Leave,Sutton,7922
+22845,30700,Leave,Eastbourne,7855
+25350,33199,Leave,Rugby,7849
+47654,55381,Leave,Carmarthenshire,7727
+52873,60589,Leave,North Tyneside,7716
+14207,21867,Leave,Barrow-in-Furness,7660
+85559,77930,Remain,Stockport,7629
+30035,37542,Leave,Gedling,7507
+32210,39525,Leave,Fareham,7315
+40743,48040,Leave,East Devon,7297
+43500,50672,Leave,Charnwood,7172
+33723,40622,Leave,Bridgend,6899
+44414,51305,Leave,Colchester,6891
+40446,33618,Remain,Stroud,6828
+24172,30994,Leave,Darlington,6822
+35469,42268,Leave,Broadland,6799
+42234,35438,Remain,North Hertfordshire,6796
+31007,24214,Remain,Woking,6793
+28546,35323,Leave,West Lancashire,6777
+35270,28533,Remain,Exeter,6737
+19889,26317,Leave,Fylde,6428
+37949,44363,Leave,Teignbridge,6414
+27391,33794,Leave,Mid Suffolk,6403
+44086,37706,Remain,Windsor and Maidenhead,6380
+35676,29320,Remain,Tunbridge Wells,6356
+26252,32563,Leave,Bromsgrove,6311
+32747,26511,Remain,Angus,6236
+32091,38258,Leave,Sevenoaks,6167
+18902,24992,Leave,Lincoln,6090
+29672,35754,Leave,Broxtowe,6082
+55328,49371,Remain,Newham,5957
+36762,42707,Leave,Powys,5945
+32241,26363,Remain,Chiltern,5878
+88931,83069,Remain,Wirral,5862
+47545,53249,Leave,Chelmsford,5704
+76702,71176,Remain,Sefton,5526
+12782,18268,Leave,Christchurch,5486
+46471,41057,Remain,Mid Sussex,5414
+59572,64976,Leave,North Somerset,5404
+18399,23802,Leave,North Dorset,5403
+130735,136018,Leave,Sheffield,5283
+11754,16966,Leave,Purbeck,5212
+30147,35357,Leave,Conwy,5210
+107962,113163,Leave,Cheshire East,5201
+29888,35002,Leave,Bracknell Forest,5114
+43864,38803,Remain,Dumfries and Galloway,5061
+25853,30771,Leave,South Northamptonshire,4918
+12695,17610,Leave,Melton,4915
+35236,30435,Remain,West Oxfordshire,4801
+37218,41966,Leave,Suffolk Coastal,4748
+24911,29631,Leave,Slough,4720
+15892,20550,Leave,Ribble Valley,4658
+25309,29933,Leave,Babergh,4624
+8566,13168,Leave,West Somerset,4602
+20011,24339,Leave,Hastings,4328
+30227,34518,Leave,Preston,4291
+23955,28117,Leave,Denbighshire,4162
+25480,29502,Leave,Hambleton,4022
+25125,29114,Leave,Worcester,3989
+14691,10736,Remain,Clackmannanshire,3955
+30944,34789,Leave,Taunton Deane,3845
+48257,52071,Leave,Basingstoke and Deane,3814
+223451,227251,Leave,Birmingham,3800
+20259,24035,Leave,Runnymede,3776
+11945,15691,Leave,Richmondshire,3746
+49261,45529,Remain,Wycombe,3732
+34531,30800,Remain,South Lakeland,3731
+36172,39902,Leave,Eastleigh,3730
+12574,16291,Leave,Merthyr Tydfil,3717
+21711,18031,Remain,Ceredigion,3680
+63393,67063,Leave,Milton Keynes,3670
+28851,32515,Leave,Worthing,3664
+58307,61936,Leave,Swansea,3629
+27550,31060,Leave,Welwyn Hatfield,3510
+25084,28568,Leave,Tewkesbury,3484
+16914,20315,Leave,Adur,3401
+29088,25708,Remain,Mole Valley,3380
+14340,17710,Leave,Ryedale,3370
+48300,44977,Remain,West Berkshire,3323
+22400,25606,Leave,Mid Devon,3206
+29308,26142,Remain,South Hams,3166
+41497,44569,Leave,Bedford,3072
+7189,4193,Remain,Orkney Islands,2996
+70980,67992,Remain,Leicester,2988
+36170,39091,Leave,Test Valley,2921
+24251,27169,Leave,Tandridge,2918
+14292,17173,Leave,Oadby and Wigston,2881
+30282,27513,Remain,Hart,2769
+38817,41541,Leave,South Norfolk,2724
+95455,98082,Leave,Cheshire West and Chester,2627
+43785,41303,Remain,Horsham,2482
+38341,40817,Leave,Stratford-on-Avon,2476
+30974,28508,Remain,Lewes,2466
+58755,56321,Remain,Hounslow,2434
+194863,192474,Remain,Leeds,2389
+92398,90034,Remain,Bromley,2364
+16658,18937,Leave,West Devon,2279
+3312,1087,Remain,City of London,2225
+34345,36558,Leave,Knowsley,2213
+14807,16911,Leave,Eden,2104
+23203,25294,Leave,Malvern Hills,2091
+16930,18961,Leave,Craven,2031
+59318,61343,Leave,Nottingham,2025
+23596,21707,Remain,Epsom and Ewell,1889
+48211,46374,Remain,Harrogate,1837
+65405,63598,Remain,Newcastle upon Tyne,1807
+40169,41879,Leave,Canterbury,1710
+6907,5315,Remain,Shetland Islands,1592
+35732,37309,Leave,Lancaster,1577
+8232,6671,Remain,Eilean Siar,1561
+22633,24095,Leave,Derbyshire Dales,1462
+33427,32028,Remain,Mendip,1399
+25751,27097,Leave,Three Rivers,1346
+31924,33267,Leave,West Dorset,1343
+35011,36326,Leave,Chichester,1315
+28015,26806,Remain,Cotswold,1209
+42542,43702,Leave,Dacorum,1160
+52877,53956,Leave,Aylesbury Vale,1079
+36681,35628,Remain,Vale of Glamorgan,1053
+25638,26667,Leave,Surrey Heath,1029
+27593,28532,Leave,Hertsmere,939
+23599,24487,Leave,East Cambridgeshire,888
+27028,27850,Leave,Harborough,822
+40181,40980,Leave,Reigate and Banstead,799
+37346,36576,Remain,East Hampshire,770
+18618,19333,Leave,Isle of Anglesey,715
+25619,26324,Leave,Uttlesford,705
+42372,42994,Leave,East Hertfordshire,622
+27116,27717,Leave,High Peak,601
+20077,20647,Leave,South Bucks,570
+40668,41168,Leave,Cherwell,500
+28061,27569,Remain,Monmouthshire,492
+11353,11613,Leave,Rutland,260
+23167,23419,Leave,Watford,252
+803,621,Remain,Isles of Scilly,182
+24114,23992,Remain,Moray,122

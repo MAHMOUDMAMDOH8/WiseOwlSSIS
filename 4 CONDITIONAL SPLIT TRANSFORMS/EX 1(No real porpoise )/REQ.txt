@@ -1,0 +1,1 @@
+SSIS Integration Services | Conditional split transforms exercise | Count the number of types of marine mammal in a CSV file, using a conditional split to differentiate

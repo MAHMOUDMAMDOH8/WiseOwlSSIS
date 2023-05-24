@@ -1,0 +1,3 @@
+SSIS Integration Services | Data flow tasks exercise | Create an SSIS package to import an Excel workbook's data into a SQL Server table of songs about food
+This exercise is provided to allow potential course delegates to choose the correct Wise Owl Microsoft training course,
+and may not be reproduced in whole or in part in any format without the prior written consent of Wise Owl.

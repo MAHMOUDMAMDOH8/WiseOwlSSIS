@@ -1,0 +1,1 @@
+SSIS Integration Services | Data conversion transforms exercise | Use a data conversion task to import Excel text data to SQL Server varchar columns

@@ -1,0 +1,1 @@
+SSIS Integration Services | Lookup transforms exercise | Use a lookup transform to get the mentor id for each contestant (or set to unknown if not found)

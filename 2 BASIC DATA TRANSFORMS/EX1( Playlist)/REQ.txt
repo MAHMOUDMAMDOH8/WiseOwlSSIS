@@ -1,0 +1,1 @@
+SSIS Integration Services | Basic data transforms exercise | Use sampling, sorting, multicast and union all transforms to generate a playlist from a workbook of songs
