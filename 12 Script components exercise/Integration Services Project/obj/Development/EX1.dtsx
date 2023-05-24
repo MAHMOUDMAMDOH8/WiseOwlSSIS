@@ -1,0 +1,1252 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/7/2023 5:32:58 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-J839N2N"
+  DTS:CreatorName="DESKTOP-J839N2N\MAHMOUD"
+  DTS:DTSID="{42EF92F4-92EF-4A9D-9470-1EB68482B57E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="EX1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{C1D1D4C3-C37B-433A-BF57-3C03B3147F90}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C280BE0F-4236-4AA4-8F53-96051150D3E8}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\SSIS\ETL(SSIS &amp; POWER QUERY)\SSIS Excersies\12 Script components exercise\EX1(Calculate durations)\GBBO.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Calculate durations"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D73864D0-58D3-47D0-8D58-E0A2E98B3B9C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Calculate durations"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Calculate durations\GBBO Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="GBBO Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Calculate durations\GBBO Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Series]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Series]"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Series]"
+                      name="Series"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Episodes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Episodes]"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Episodes]"
+                      name="Episodes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Premiere]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Premiere]"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Premiere]"
+                      name="Premiere"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Finale]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Finale]"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Finale]"
+                      name="Finale"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Winner]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Winner]"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Winner]"
+                      name="Winner"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Series]"
+                      dataType="wstr"
+                      length="255"
+                      name="Series" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Episodes]"
+                      dataType="wstr"
+                      length="255"
+                      name="Episodes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Premiere]"
+                      dataType="date"
+                      name="Premiere" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Finale]"
+                      dataType="date"
+                      name="Finale" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].ExternalColumns[Winner]"
+                      dataType="wstr"
+                      length="255"
+                      name="Winner" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Series]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Series]"
+                      name="Series" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Episodes]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Episodes]"
+                      name="Episodes" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Premiere]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Premiere]"
+                      name="Premiere" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Finale]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Finale]"
+                      name="Finale" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Winner]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[Winner]"
+                      name="Winner" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Calculate durations\Script Component"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;13"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Script Component"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_a532f5b4a9a441d38784734a72be668c.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5ccd4951-e5e2-44d0-9465-dcabd83c38d9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_a532f5b4a9a441d38784734a72be668c</RootNamespace>
+    <AssemblyName>SC_a532f5b4a9a441d38784734a72be668c</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_a532f5b4a9a441d38784734a72be668c" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+
+        // take the time difference, and convert it into days
+        Row.DurationDays = (Row.Finale - Row.Premiere).Days;
+
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public DateTime Premiere
+    {
+        get
+        {
+            return Buffer.GetDateTime(BufferColumnIndexes[0]);
+        }
+    }
+    public bool Premiere_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public DateTime Finale
+    {
+        get
+        {
+            return Buffer.GetDateTime(BufferColumnIndexes[1]);
+        }
+    }
+    public bool Finale_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public int DurationDays { get; internal set; }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_a532f5b4a9a441d38784734a72be668c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_a532f5b4a9a441d38784734a72be668c")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_a532f5b4a9a441d38784734a72be668c</msb:CodeName>
+    <msb:DisplayName>SC_a532f5b4a9a441d38784734a72be668c</msb:DisplayName>
+    <msb:ProjectId>{B1081B54-C833-46CF-BC91-5698716B1DE0}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_a532f5b4a9a441d38784734a72be668c.csproj" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_a532f5b4a9a441d38784734a72be668c.Properties.Settings.get_Default():SC_a532f5b4a9a441d38784734a72be668c.Properties.Sett" +
+    "ings")]
+
+namespace SC_a532f5b4a9a441d38784734a72be668c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_a532f5b4a9a441d38784734a72be668c.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_a532f5b4a9a441d38784734a72be668c.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_a532f5b4a9a441d38784734a72be668c.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_a532f5b4a9a441d38784734a72be668c.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_a532f5b4a9a441d38784734a72be668c.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_a532f5b4a9a441d38784734a72be668c.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAH4PV2QAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAZjEA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABQxAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAbBEAAAAgAAAAEgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABI
+MQAAAAAAAEgAAAACAAUAxCEAAJgOAAABAAAAAAAAAFwwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwAwAgAAAAAQAAEQMDbwYAAAYDbwQAAAYoEAAACgoSACgR
+AAAKbwkAAAYqHgIoDAAABioqAgMEBSgSAAAKKlICexMAAAoCexQAAAoWlG8VAAAKKiICFigWAAAK
+KlICexMAAAoCexQAAAoXlG8VAAAKKiICFygWAAAKKh4CewEAAAQqIgIDfQEAAAQqHgIoFwAACioe
+AigYAAAKKn4CKBkAAAoCAnMQAAAGfQIAAAQCAnMRAAAGfQMAAAQqkgRyAQAAcBpvGgAACiwVAgUC
+AygbAAAKDgRzAwAABm8OAAAGKkorBwIDbw8AAAYDbwoAAAYt8SoGKjoCKBwAAAoCA30EAAAEKjoC
+KBwAAAoCA30FAAAEKh4CKBwAAAoqrn4GAAAELR5yEQAAcNAHAAACKB0AAApvHgAACnMfAAAKgAYA
+AAR+BgAABCoafgcAAAQqHgKABwAABCoafggAAAQqHgIoIAAACioucxcAAAaACAAABCoAAEJTSkIB
+AAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAIQFAAAjfgAA8AUAAFwGAAAjU3RyaW5ncwAA
+AABMDAAAhAAAACNVUwDQDAAAEAAAACNHVUlEAAAA4AwAALgBAAAjQmxvYgAAAAAAAAACAAABVxWi
+AQkBAAAA+gEzABYAAAEAAAAgAAAACAAAAAgAAAAYAAAADgAAACAAAAATAAAAAQAAAAMAAAAIAAAA
+CgAAAAEAAAAEAAAAAQAAAAAAFQMBAAAAAAAGACYCZwQGALoCZwQGAHIBVAQPANsEAAAGAJ8BwwMG
+AAkCwwMGAOoBwwMGAKECwwMGAEYCwwMGAF8CwwMGALYBwwMGANEB3gIKAHoCsgAGAHYDYwMKACYE
+sgAGADoBZwQOABcEsgAKAPIDsgAGAKkAYwMKAMwFsgAGAI8FYwMGAFUBVAQGADcEhwQGAOYDnwMS
+ACUB/wISAIYB/wISAA0BigMGAPgCYwMGANUDYwMGANMAYwMGAHgAYwMGAFEGwwMAAAAAAQAAAAAA
+AQABAAEAEAB/AwAAEAABAAEAAQAQAAoEAAA9AAEAAwABABAArgUAAFEAAgAMAAEAEABYBQAAVQAE
+ABAAAQAQABkFAABVAAUAEQAAABAAjgTqBFUABgASAAABEABIBeoEbQAIABYAAQA/AIIABgBYBYUA
+BgAZBYkAAQC8BY0AAQC8BY0AEQBqA5EAEQD9AJUAEQBdAJkAUCAAAAAAxgAuBp0AAQB8IAAAAACG
+GEcEBgACAIQgAAAAAIYYRwQtAAIAjyAAAAAAhgjYAKMABQCkIAAAAACGCE8DSgAFAK0gAAAAAIYI
+bQCjAAUAwiAAAAAAhgg9A0oABQDLIAAAAACGCG0FKQAFANMgAAAAAIMIfgUBAAUA3CAAAAAAhgBF
+BkoABgDkIAAAAACGAJYFSgAGAOwgAAAAAIYYRwQGAAYADCEAAAAAxgAhBqgABgAxIQAAAADGARoG
+nQAKAEQhAAAAAMYBLgadAAsARiEAAAAAhhhHBLIADABVIQAAAACGGEcEsgANAGQhAAAAAIMYRwQG
+AA4AbCEAAAAAkwgzBLgADgCYIQAAAACTCOUAvQAOAJ8hAAAAAJMI8QDCAA4ApyEAAAAAlgiiBcgA
+DwCuIQAAAACGGEcEBgAPALYhAAAAAJEYTQTNAA8AAAABAEkGAAABACwEAAACACMFAAADAAAEAAAB
+ANgCAAABAAoAAAACAJwAAAADACwEAAAEAAAEAAABACwEAAABAEkGAAABANIFAAABANIFAAABANgC
+CQBHBAEAEQBHBAYAGQBHBAoAKQBHBBAAMQBHBBAAOQBHBBAAQQBHBBAASQBHBBAAUQBHBBAAWQBH
+BBAAYQBHBBAAaQBHBAYAgQBHBAYAsQBHBAYA0QBHBBUAmQC0AyAAcQBkBSkAeQBHBC0AeQAsBDcA
+eQAjBTsAiQCmAD8AeQBcA0UAeQBFBkoAeQCWBUoAoQBHBAYA4QBRBU4AoQA3BVUAqQBHBAYA8QCK
+AFsA8QBNBmIAuQBHBGgA2QBHBAYAIQBrALIBLgALAO0ALgATAPYALgAbABUBLgAjAB4BLgArAEcB
+LgAzAEcBLgA7AEcBLgBDAB4BLgBLAE0BLgBTAEcBLgBbAGQBQwBjALIByQB7ABUB4wBzALIB6QB7
+ABUBAAFrALIBAQFrALIBIAFrALIBGwADAAEABwAGAAgACAAAANwA0QAAAFMD1gAAAHEA0QAAAEED
+1gAAAIIF2gAAADcE3gAAAAUB4wAAAKYF6AACAAQAAwACAAUABQACAAYABwACAAcACQACAAgACwAB
+AAkACwACABMADQACABQADwABABUADwACABYAEQAEgAAAAQAAAAAAAAAAAAAAAAAbAAAABAAAAAAA
+AAAAAAAAcAASAAAAAAAQAAAAAAAAAAAAAAB5ANwFAAAAABAAAAAAAAAAAAAAAHkA+QUAAAAABAAA
+AAAAAAAAAAAAcABjAwAAAAAAAAAAAQAAAJgEAAAAAAAAADxNb2R1bGU+AElucHV0SUQAbXNjb3Js
+aWIAU0NfYTUzMmY1YjRhOWE0NDFkMzg3ODQ3MzRhNzJiZTY2OGMAPER1cmF0aW9uRGF5cz5rX19C
+YWNraW5nRmllbGQAZGVmYXVsdEluc3RhbmNlAGdldF9GaW5hbGUAUnVudGltZVR5cGVIYW5kbGUA
+R2V0VHlwZUZyb21IYW5kbGUASW5wdXROYW1lAEdldERhdGVUaW1lAE1pY3Jvc29mdC5TcWxTZXJ2
+ZXIuRHRzLlBpcGVsaW5lAFR5cGUAZ2V0X1ByZW1pZXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJl
+AHJlc291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93c2FibGVT
+dGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmli
+dXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5
+VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3Jr
+QXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0
+aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9k
+dWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25l
+bnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29t
+cGF0aWJpbGl0eUF0dHJpYnV0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFN0cmlu
+ZwBTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU0NfYTUzMmY1YjRhOWE0NDFkMzg3ODQ3MzRhNzJiZTY2
+OGMuZGxsAGdldF9GaW5hbGVfSXNOdWxsAGdldF9QcmVtaWVyZV9Jc051bGwAU3lzdGVtAHJlc291
+cmNlTWFuAFRpbWVTcGFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkds
+b2JhbGl6YXRpb24Ab3BfU3VidHJhY3Rpb24AU3lzdGVtLlJlZmxlY3Rpb24AU3RyaW5nQ29tcGFy
+aXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABJbnB1dDBCdWZmZXIAUGlw
+ZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9y
+AFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3Rl
+bS5SZXNvdXJjZXMAU0NfYTUzMmY1YjRhOWE0NDFkMzg3ODQ3MzRhNzJiZTY2OGMuUHJvcGVydGll
+cy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNDX2E1MzJmNWI0YTlhNDQxZDM4
+Nzg0NzM0YTcyYmU2NjhjLlByb3BlcnRpZXMAVmFyaWFibGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMA
+R2V0Q29sdW1uSW5kZXhlcwBTZXR0aW5ncwBFcXVhbHMAQ29ubmVjdGlvbnMAZ2V0X0RheXMAZ2V0
+X0R1cmF0aW9uRGF5cwBzZXRfRHVyYXRpb25EYXlzAE9iamVjdABFbmRPZlJvd3NldABnZXRfRGVm
+YXVsdABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQATWljcm9z
+b2Z0LlNxbFNlcnZlci5UeFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJ
+bnB1dDBfUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBnZXRfQXNz
+ZW1ibHkAAAAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwBhADUAMwAyAGYANQBiADQAYQA5AGEANAA0
+ADEAZAAzADgANwA4ADQANwAzADQAYQA3ADIAYgBlADYANgA4AGMALgBQAHIAbwBwAGUAcgB0AGkA
+ZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAB3r4b3atT2Q59YnxUNjWTkAAQgAQEIAyAAAQUgAQER
+EQQgAQEOBSABARFlBAcBETkIAAIRORFNEU0DIAAICSADARJFHQgSSQMGEkUDBh0IBSABEU0IBCAB
+AggDIAACBiACAg4RdQUgAR0ICAYAARJ5EX0FIAASgIEHIAIBDhKAgQi3elxWGTTgiQiJhF3NgIDM
+kQIGCAMGEhQDBhIYAwYSUQMGEl0DBhJhAwYSIAUgAQESDAQgABFNCSAEAQgOEkUSSQUgAQESUQQA
+ABJdBAAAEmEFAAEBEmEEAAASIAMAAAEEKAARTQMoAAIDKAAIBAgAEl0ECAASYQQIABIgCAEACAAA
+AAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTQ19hNTMyZjVi
+NGE5YTQ0MWQzODc4NDczNGE3MmJlNjY4YwAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDIzAABN
+AQAcLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcuMgEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUU
+Lk5FVCBGcmFtZXdvcmsgNC43LjIEAQAAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJj
+ZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1
+dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1
+bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAPDEAAAAAAAAAAAAAVjEAAAAg
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgxAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5k
+bGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
+AEgAAABYQAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
+AAAAAL0E7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
+bgAAAAAAAACwBEwDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAACgDAAABADAAMAAw
+ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
+bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
+AAAAUwBDAF8AYQA1ADMAMgBmADUAYgA0AGEAOQBhADQANAAxAGQAMwA4ADcAOAA0ADcAMwA0AGEA
+NwAyAGIAZQA2ADYAOABjAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
+ADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwBhADUAMwAyAGYA
+NQBiADQAYQA5AGEANAA0ADEAZAAzADgANwA4ADQANwAzADQAYQA3ADIAYgBlADYANgA4AGMALgBk
+AGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcA
+aAB0ACAAQAAgACAAMgAwADIAMwAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBz
+AAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfAGEA
+NQAzADIAZgA1AGIANABhADkAYQA0ADQAMQBkADMAOAA3ADgANAA3ADMANABhADcAMgBiAGUANgA2
+ADgAYwAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwBhADUA
+MwAyAGYANQBiADQAYQA5AGEANAA0ADEAZAAzADgANwA4ADQANwAzADQAYQA3ADIAYgBlADYANgA4
+AGMAAAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAA
+OAAIAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAGgxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_a532f5b4a9a441d38784734a72be668c</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">7B</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Calculate durations\Script Component.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Calculate durations\Script Component.Inputs[Input 0].Columns[Premiere]"
+                      cachedDataType="date"
+                      cachedName="Premiere"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Premiere]" />
+                    <inputColumn
+                      refId="Package\Data Flow Calculate durations\Script Component.Inputs[Input 0].Columns[Finale]"
+                      cachedDataType="date"
+                      cachedName="Finale"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Finale]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Calculate durations\Script Component.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Data Flow Calculate durations\Script Component.Inputs[Input 0]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Calculate durations\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Calculate durations\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Inputs[Union All Input 1].Columns[Series]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Series"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Series]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Series]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Inputs[Union All Input 1].Columns[Episodes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Episodes"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Episodes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Episodes]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Inputs[Union All Input 1].Columns[Premiere]"
+                      cachedDataType="date"
+                      cachedName="Premiere"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Premiere]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Premiere]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Inputs[Union All Input 1].Columns[Finale]"
+                      cachedDataType="date"
+                      cachedName="Finale"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Finale]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Finale]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Inputs[Union All Input 1].Columns[Winner]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Winner"
+                      lineageId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output].Columns[Winner]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Winner]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Calculate durations\Union All.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Series]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Series]"
+                      name="Series" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Episodes]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Episodes]"
+                      name="Episodes" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Premiere]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Premiere]"
+                      name="Premiere" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Finale]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Finale]"
+                      name="Finale" />
+                    <outputColumn
+                      refId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Winner]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Calculate durations\Union All.Outputs[Union All Output 1].Columns[Winner]"
+                      name="Winner" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Calculate durations.Paths[Excel Source Output]"
+              endId="Package\Data Flow Calculate durations\Script Component.Inputs[Input 0]"
+              name="Excel Source Output"
+              startId="Package\Data Flow Calculate durations\GBBO Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Data Flow Calculate durations.Paths[Output 0]"
+              endId="Package\Data Flow Calculate durations\Union All.Inputs[Union All Input 1]"
+              name="Output 0"
+              startId="Package\Data Flow Calculate durations\Script Component.Outputs[Output 0]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Data Flow Calculate durations"
+          TopLeft="304.999983335535,90.1333327065574" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Calculate durations">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Data Flow Calculate durations\GBBO Source"
+          TopLeft="309.999983062347,102.266665955517" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Data Flow Calculate durations\Script Component"
+          TopLeft="298.333317033119,194.133331983354" />
+        <EdgeLayout
+          Id="Package\Data Flow Calculate durations.Paths[Excel Source Output]"
+          TopLeft="380.566650047733,143.866665955517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.2666660278374"
+              Start="0,0"
+              End="0,42.7666660278374">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7666660278374" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Data Flow Calculate durations\Union All"
+          TopLeft="323.33331566718,303.333331223991" />
+        <EdgeLayout
+          Id="Package\Data Flow Calculate durations.Paths[Output 0]"
+          TopLeft="381.23331635015,235.733331983354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.5999992406369"
+              Start="0,0"
+              End="0,60.0999992406369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.0999992406369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,22.0499996203184,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Calculate durations\GBBO Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
