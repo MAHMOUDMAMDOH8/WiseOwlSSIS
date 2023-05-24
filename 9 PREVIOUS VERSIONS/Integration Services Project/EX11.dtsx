@@ -1,0 +1,1416 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/6/2023 7:06:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-J839N2N"
+  DTS:CreatorName="DESKTOP-J839N2N\MAHMOUD"
+  DTS:DTSID="{2AD7810B-5E98-49FF-AAF1-A4BFF4BE35E9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="EX11"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{E380EACC-BDE0-4BC0-83FD-127312394B4D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{430A383B-8498-424F-80A6-3FEB1A4CF9BE}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\SSIS\ETL(SSIS &amp; POWER QUERY)\SSIS Excersies\9 PREVIOUS VERSIONS\EX11(Text file of rich people)\Sunday Times rich list 2012.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Text file of rich people]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2C81826C-785F-47C4-8932-BB4BAD2C142B}"
+      DTS:ObjectName="Text file of rich people">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\SSIS\ETL(SSIS &amp; POWER QUERY)\SSIS Excersies\9 PREVIOUS VERSIONS\EX11(Text file of rich people)\Sunday Times rich list 2012.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rank"
+              DTS:DTSID="{898AD38D-70A1-4079-B69C-1C7FF97E643C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Millions"
+              DTS:DTSID="{3E87B9C1-697E-4B6F-BE58-8439293AC2F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{CF359771-6912-4DA8-8633-B13A48A5CC90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{41B41D4B-B354-40A2-8E8E-2D0BFFDC2E7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Source of wealth"
+              DTS:DTSID="{7215E9E3-4B7B-4913-B508-9CEDF86FFF36}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\impoet Text file of rich people"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EAC50972-8FB8-491D-90F6-CEFD94AFBF32}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="impoet Text file of rich people"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\impoet Text file of rich people\change type"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="change type"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\impoet Text file of rich people\change type.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\change type.Inputs[Derived Column Input].Columns[Millions]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Millions"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Millions]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\impoet Text file of rich people\change type.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Output].Columns[New millions]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Output].Columns[New millions]"
+                      name="New millions"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)#{Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Millions]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)Millions</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\impoet Text file of rich people\change type.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\impoet Text file of rich people\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\impoet Text file of rich people\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Inputs[Data Conversion Input].Columns[Rank]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Rank"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Rank]" />
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Inputs[Data Conversion Input].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Inputs[Data Conversion Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Inputs[Data Conversion Input].Columns[Source of wealth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source of wealth"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Source of wealth]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\impoet Text file of rich people\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Rank]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Rank]"
+                      name="Copy of Rank"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Rank]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Name]"
+                      name="Copy of Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country]"
+                      name="Copy of Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Country]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source of wealth]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source of wealth]"
+                      name="Copy of Source of wealth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Source of wealth]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\impoet Text file of rich people\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\impoet Text file of rich people\detrmin len of mill"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="detrmin len of mill"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\impoet Text file of rich people\detrmin len of mill.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\detrmin len of mill.Inputs[Conditional Split Input].Columns[Millions]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Millions"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Millions]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[not have value]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="not have value"
+                  synchronousInputId="Package\impoet Text file of rich people\detrmin len of mill.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Millions]}) || [LEN](#{Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Millions]}) == 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(Millions) || LEN(Millions) == 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[have value]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="have value"
+                  synchronousInputId="Package\impoet Text file of rich people\detrmin len of mill.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\impoet Text file of rich people\detrmin len of mill.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\impoet Text file of rich people\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Rich list 2012$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\impoet Text file of rich people\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].Columns[Millions]"
+                      cachedDataType="i4"
+                      cachedName="Millions"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Millions]"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Millions]" />
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Rank]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Rank"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Rank]"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Rank]" />
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Name"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Name]" />
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Country"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country]" />
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Source of wealth]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Source of wealth"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Source of wealth]"
+                      lineageId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source of wealth]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Rank]"
+                      dataType="wstr"
+                      length="255"
+                      name="Rank" />
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Millions]"
+                      dataType="wstr"
+                      length="255"
+                      name="Millions" />
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Source of wealth]"
+                      dataType="wstr"
+                      length="255"
+                      name="Source of wealth" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\impoet Text file of rich people\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\impoet Text file of rich people\set 0"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="set 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\impoet Text file of rich people\set 0.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\impoet Text file of rich people\set 0.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Output].Columns[New millions]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Output].Columns[New millions]"
+                      name="New millions"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\impoet Text file of rich people\set 0.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\impoet Text file of rich people\Text file of rich"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Text file of rich"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\impoet Text file of rich people\Text file of rich.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Text file of rich people]"
+                  connectionManagerRefId="Package.ConnectionManagers[Text file of rich people]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Rank]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Rank]"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Rank]"
+                      name="Rank"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Millions]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Millions]"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Millions]"
+                      name="Millions"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Source of wealth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Source of wealth]"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Source of wealth]"
+                      name="Source of wealth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Rank]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Rank" />
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Millions]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Millions" />
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].ExternalColumns[Source of wealth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Source of wealth" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\impoet Text file of rich people\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 1].Columns[Rank]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Rank"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Rank]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Rank]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 1].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 1].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Country]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 1].Columns[Source of wealth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source of wealth"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Source of wealth]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Source of wealth]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 1].Columns[New millions]"
+                      cachedDataType="i4"
+                      cachedName="New millions"
+                      lineageId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Output].Columns[New millions]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Millions]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 2].Columns[Rank]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Rank"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Rank]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Rank]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 2].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 2].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Country"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Country]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 2].Columns[Source of wealth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Source of wealth"
+                      lineageId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output].Columns[Source of wealth]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Source of wealth]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 2].Columns[New millions]"
+                      cachedDataType="i4"
+                      cachedName="New millions"
+                      lineageId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Output].Columns[New millions]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Millions]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Rank]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Rank]"
+                      name="Rank" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Source of wealth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Source of wealth]"
+                      name="Source of wealth" />
+                    <outputColumn
+                      refId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Millions]"
+                      dataType="i4"
+                      lineageId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1].Columns[Millions]"
+                      name="Millions" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\impoet Text file of rich people.Paths[Data Conversion Output]"
+              endId="Package\impoet Text file of rich people\Excel Destination.Inputs[Excel Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\impoet Text file of rich people\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\impoet Text file of rich people.Paths[Derived Column Output]"
+              endId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\impoet Text file of rich people\change type.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\impoet Text file of rich people.Paths[Derived Column Output1]"
+              endId="Package\impoet Text file of rich people\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\impoet Text file of rich people\set 0.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\impoet Text file of rich people.Paths[Flat File Source Output]"
+              endId="Package\impoet Text file of rich people\detrmin len of mill.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\impoet Text file of rich people\Text file of rich.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\impoet Text file of rich people.Paths[have value]"
+              endId="Package\impoet Text file of rich people\change type.Inputs[Derived Column Input]"
+              name="have value"
+              startId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[have value]" />
+            <path
+              refId="Package\impoet Text file of rich people.Paths[not have value]"
+              endId="Package\impoet Text file of rich people\set 0.Inputs[Derived Column Input]"
+              name="not have value"
+              startId="Package\impoet Text file of rich people\detrmin len of mill.Outputs[not have value]" />
+            <path
+              refId="Package\impoet Text file of rich people.Paths[Union All Output 1]"
+              endId="Package\impoet Text file of rich people\Data Conversion.Inputs[Data Conversion Input]"
+              name="Union All Output 1"
+              startId="Package\impoet Text file of rich people\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\impoet Text file of rich people"
+          TopLeft="273.333318399059,82.3333327607976" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\impoet Text file of rich people">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\impoet Text file of rich people\Text file of rich"
+          TopLeft="426.851828529696,38.4222219550389" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\impoet Text file of rich people\Excel Destination"
+          TopLeft="670.277741155416,414.074071194654" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\impoet Text file of rich people\detrmin len of mill"
+          TopLeft="661.111074989593,39.4814812069322" />
+        <EdgeLayout
+          Id="Package\impoet Text file of rich people.Paths[Flat File Source Output]"
+          TopLeft="572.451828529696,59.7518515809856">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.6592464598972,0"
+              Start="0,0"
+              End="81.1592464598972,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="81.1592464598972,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\impoet Text file of rich people\change type"
+          TopLeft="546.296266447984,127.111110227196" />
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\impoet Text file of rich people\set 0"
+          TopLeft="806.481437417278,122.296295445863" />
+        <EdgeLayout
+          Id="Package\impoet Text file of rich people.Paths[not have value]"
+          TopLeft="766.444408322927,81.0814812069322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.4370290943513,41.214814238931"
+              Start="0,0"
+              End="90.4370290943513,33.714814238931">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.7307661761997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.7307661761997"
+                    Point2="0,16.7307661761997"
+                    Point3="4,16.7307661761997" />
+                  <mssgle:LineSegment
+                    End="86.4370290943513,16.7307661761997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.4370290943513,16.7307661761997"
+                    Point2="90.4370290943513,16.7307661761997"
+                    Point3="90.4370290943513,20.7307661761997" />
+                  <mssgle:LineSegment
+                    End="90.4370290943513,33.714814238931" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="12.1605457971756,21.7307661761997,66.1159375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\impoet Text file of rich people.Paths[have value]"
+          TopLeft="715.77774165626,81.0814812069322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-101.881475208276,46.0296290202641"
+              Start="0,0"
+              End="-101.881475208276,38.5296290202641">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.6852949488201" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6852949488201"
+                    Point2="0,18.6852949488201"
+                    Point3="-4,18.6852949488201" />
+                  <mssgle:LineSegment
+                    End="-97.8814752082758,18.6852949488201" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-97.8814752082758,18.6852949488201"
+                    Point2="-101.881475208276,18.6852949488201"
+                    Point3="-101.881475208276,22.6852949488201" />
+                  <mssgle:LineSegment
+                    End="-101.881475208276,38.5296290202641" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-75.2587063541379,23.6852949488201,48.6359375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,45.6"
+          Id="Package\impoet Text file of rich people\Union All"
+          TopLeft="687.03699949899,210.888887422394" />
+        <EdgeLayout
+          Id="Package\impoet Text file of rich people.Paths[Derived Column Output]"
+          TopLeft="613.896266447984,168.711110227196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.47406638434,42.1777771951976"
+              Start="0,0"
+              End="114.47406638434,34.6777771951976">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9736838655775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.9736838655775"
+                    Point2="0,24.9736838655775"
+                    Point3="4,24.9736838655775" />
+                  <mssgle:LineSegment
+                    End="110.47406638434,24.9736838655775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.47406638434,24.9736838655775"
+                    Point2="114.47406638434,24.9736838655775"
+                    Point3="114.47406638434,28.9736838655775" />
+                  <mssgle:LineSegment
+                    End="114.47406638434,34.6777771951976" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\impoet Text file of rich people.Paths[Derived Column Output1]"
+          TopLeft="856.881437417278,163.896295445863">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-91.1777712516209,46.9925919765307"
+              Start="0,0"
+              End="-91.1777712516209,39.4925919765307">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8245610387353" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.8245610387353"
+                    Point2="0,27.8245610387353"
+                    Point3="-4,27.8245610387353" />
+                  <mssgle:LineSegment
+                    End="-87.1777712516209,27.8245610387353" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-87.1777712516209,27.8245610387353"
+                    Point2="-91.1777712516209,27.8245610387353"
+                    Point3="-91.1777712516209,31.8245610387353" />
+                  <mssgle:LineSegment
+                    End="-91.1777712516209,39.4925919765307" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\impoet Text file of rich people\Data Conversion"
+          TopLeft="668.518481992279,304.296294180258" />
+        <EdgeLayout
+          Id="Package\impoet Text file of rich people.Paths[Union All Output 1]"
+          TopLeft="746.777740745634,256.488887422394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8074067578638"
+              Start="0,0"
+              End="0,40.3074067578638">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3074067578638" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\impoet Text file of rich people.Paths[Data Conversion Output]"
+          TopLeft="748.198111573847,345.896294180258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.1777770143968"
+              Start="0,0"
+              End="0,60.6777770143968">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.6777770143968" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\impoet Text file of rich people\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

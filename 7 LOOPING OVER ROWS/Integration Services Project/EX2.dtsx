@@ -1,0 +1,562 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2023 10:22:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-J839N2N"
+  DTS:CreatorName="DESKTOP-J839N2N\MAHMOUD"
+  DTS:DTSID="{22FB8844-5B11-46A1-9C6A-FE40D5F9AB35}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{8BF53B03-BC45-4F39-9D9E-839D14448651}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{3712A1A8-BD59-45E3-9605-801EA03B79E2}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\SSIS\ETL(SSIS &amp; POWER QUERY)\SSIS Excersies\7 LOOPING OVER ROWS\EX2\Shopping.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETL(SSIS)]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{98AAE3EA-B778-4F93-912A-43855C8A534E}"
+      DTS:ObjectName="LocalHost.ETL(SSIS)">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=ETL(SSIS);Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{98AAE3EA-B778-4F93-912A-43855C8A534E}LocalHost.ETL(SSIS);Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETL(SSIS)1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{49F74F26-0712-4062-B632-6DCC60070DEB}"
+      DTS:ObjectName="LocalHost.ETL(SSIS)1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=ETL(SSIS);Integrated Security=True;Application Name=SSIS-Package1-{49F74F26-0712-4062-B632-6DCC60070DEB}LocalHost.ETL(SSIS)1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.ETL(SSIS)2]"
+      DTS:CreationName="ADO.NET:OLEDB"
+      DTS:DTSID="{154DAD47-8B44-44A8-A8E0-5F7DA6034C4F}"
+      DTS:ObjectName="LocalHost.ETL(SSIS)2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=ETL(SSIS);Provider=SQLNCLI11.1;Integrated Security=SSPI;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{12C82FBE-EC53-4152-8EC1-3D1C5D2AE24B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="sheatname">
+      <DTS:VariableValue
+        DTS:DataType="8">January$</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\looping into one worksheet"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{5CF3C622-4FEE-4E36-9C4F-A6FE558B6118}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="looping into one worksheet">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachSchemaRowsetEnumerator"
+        DTS:DTSID="{71F1C0D3-A629-4164-93CC-58D1D61A049B}"
+        DTS:ObjectName="{71F1C0D3-A629-4164-93CC-58D1D61A049B}">
+        <DTS:ObjectData>
+          <FEESchemaRowset
+            Connection="LocalHost.ETL(SSIS)2"
+            Schema="c8b52229-5cf3-11ce-ade5-00aa0044773d" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\looping into one worksheet\import data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{695109F6-2803-432F-B81F-213327B87797}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="import data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\looping into one worksheet\import data\DB ADOSHOPPING"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DB ADOSHOPPING"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AdoShopping]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.ETL(SSIS)]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.ETL(SSIS)]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].Columns[Spending]"
+                          cachedDataType="r8"
+                          cachedName="Spending"
+                          externalMetadataColumnId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].ExternalColumns[Spending]"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Spending]" />
+                        <inputColumn
+                          refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].Columns[Shopping date]"
+                          cachedDataType="date"
+                          cachedName="Shopping date"
+                          externalMetadataColumnId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].ExternalColumns[ShopDate]"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Shopping date]" />
+                        <inputColumn
+                          refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].Columns[Supermarket]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Supermarket"
+                          externalMetadataColumnId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].ExternalColumns[ShopName]"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Supermarket]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].ExternalColumns[ShopName]"
+                          dataType="wstr"
+                          length="255"
+                          name="ShopName" />
+                        <externalMetadataColumn
+                          refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].ExternalColumns[ShopDate]"
+                          dataType="dbDate"
+                          name="ShopDate" />
+                        <externalMetadataColumn
+                          refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input].ExternalColumns[Spending]"
+                          dataType="numeric"
+                          name="Spending"
+                          precision="10"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\looping into one worksheet\import data\source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">January$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\looping into one worksheet\import data\source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Shopping date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].ExternalColumns[Shopping date]"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Shopping date]"
+                          name="Shopping date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Supermarket]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].ExternalColumns[Supermarket]"
+                          length="255"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Supermarket]"
+                          name="Supermarket"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Spending]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].ExternalColumns[Spending]"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].Columns[Spending]"
+                          name="Spending"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].ExternalColumns[Shopping date]"
+                          dataType="date"
+                          name="Shopping date" />
+                        <externalMetadataColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].ExternalColumns[Supermarket]"
+                          dataType="wstr"
+                          length="255"
+                          name="Supermarket" />
+                        <externalMetadataColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output].ExternalColumns[Spending]"
+                          dataType="r8"
+                          name="Spending" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[Shopping date]"
+                          dataType="date"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[Shopping date]"
+                          name="Shopping date" />
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[Supermarket]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[Supermarket]"
+                          name="Supermarket" />
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[Spending]"
+                          dataType="r8"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[Spending]"
+                          name="Spending" />
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\looping into one worksheet\import data.Paths[Excel Source Output]"
+                  endId="Package\looping into one worksheet\import data\DB ADOSHOPPING.Inputs[OLE DB Destination Input]"
+                  name="Excel Source Output"
+                  startId="Package\looping into one worksheet\import data\source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{4764FC6B-A0B2-483F-9CAF-0E1873C9D6FB}"
+          DTS:ObjectName="{4764FC6B-A0B2-483F-9CAF-0E1873C9D6FB}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::sheatname" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate  AdoShopping"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E8AA5CBA-686C-453D-BA7D-0405BFB1926B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate  AdoShopping"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{98AAE3EA-B778-4F93-912A-43855C8A534E}"
+          SQLTask:SqlStatementSource="truncate table AdoShopping" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C35DB1F2-55E0-4624-9969-6E43D3D88528}"
+      DTS:From="Package\truncate  AdoShopping"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\looping into one worksheet" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\looping into one worksheet\import data"
+          TopLeft="44.366642125283,24.9999982462328" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="244.8,122.4"
+          Size="244.8,165.6"
+          Id="Package\looping into one worksheet"
+          TopLeft="404.999977871777,183.733332055675" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\truncate  AdoShopping"
+          TopLeft="439.166642671659,48.5333329958386" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="524.483310271718,90.1333329958386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,93.599999059836"
+              Start="0,0"
+              End="0,86.099999059836">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.099999059836" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\looping into one worksheet\import data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="109.6,41.6"
+          Id="Package\looping into one worksheet\import data\source"
+          TopLeft="260.833319082029,61.5333329054382" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\looping into one worksheet\import data\DB ADOSHOPPING"
+          TopLeft="248.333319764999,169.866665485435" />
+        <EdgeLayout
+          Id="Package\looping into one worksheet\import data.Paths[Excel Source Output]"
+          TopLeft="315.633319082029,103.133332905438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.1000006829699,66.7333325799969"
+              Start="0,0"
+              End="19.1000006829699,59.2333325799969">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.3666662899984" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.3666662899984"
+                    Point2="0,33.3666662899984"
+                    Point3="4,33.3666662899984" />
+                  <mssgle:LineSegment
+                    End="15.1000006829699,33.3666662899984" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.1000006829699,33.3666662899984"
+                    Point2="19.1000006829699,33.3666662899984"
+                    Point3="19.1000006829699,37.3666662899984" />
+                  <mssgle:LineSegment
+                    End="19.1000006829699,59.2333325799969" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\looping into one worksheet\import data\source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\looping into one worksheet\import data\DB ADOSHOPPING">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

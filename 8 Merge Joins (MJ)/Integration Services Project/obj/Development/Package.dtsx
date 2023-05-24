@@ -1,0 +1,1618 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/5/2023 6:27:18 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-J839N2N"
+  DTS:CreatorName="DESKTOP-J839N2N\MAHMOUD"
+  DTS:DTSID="{17280438-072C-4F5C-A657-811B5255A06F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{6DC4CAEE-2100-4F28-A00C-49F723BFE0AF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{472AEA5D-B0E3-41C0-9679-F4D05F6EFC32}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\SSIS\ETL(SSIS &amp; POWER QUERY)\SSIS Excersies\8 Merge Joins (MJ)\EX\Premier Leagues.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{36FA4BAB-317E-4BC9-8EBB-A6A6368C48C6}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\SSIS\ETL(SSIS &amp; POWER QUERY)\SSIS Excersies\8 Merge Joins (MJ)\EX\sol.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Team"
+              DTS:DTSID="{88B77944-C0D1-40AA-8936-BB8F2CBFCC3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Team (1)"
+              DTS:DTSID="{83B64806-4AFD-43FC-9372-8D41A9884973}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\showing Premier Leagues"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{430311BA-96BB-4C39-A9A7-22472D04952C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="showing Premier Leagues"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\showing Premier Leagues\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\showing Premier Leagues\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\Conditional Split.Inputs[Conditional Split Input].Columns[Team]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Team"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team]" />
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\Conditional Split.Inputs[Conditional Split Input].Columns[Team (1)]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Team (1)"
+                      lineageId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team (1)]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\showing Premier Leagues\Conditional Split.Outputs[Matched Teams]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Matched Teams"
+                  synchronousInputId="Package\showing Premier Leagues\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(![ISNULL](#{Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team]})) &amp;&amp; (![ISNULL](#{Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team (1)]}))</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(!ISNULL(Team)) &amp;&amp; (!ISNULL([Team (1)]))</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\showing Premier Leagues\Conditional Split.Outputs[UnMatched Teams]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="UnMatched Teams"
+                  synchronousInputId="Package\showing Premier Leagues\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\showing Premier Leagues\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\showing Premier Leagues\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\showing Premier Leagues\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\showing Premier Leagues\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\showing Premier Leagues\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\showing Premier Leagues\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\showing Premier Leagues\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\Flat File Destination.Inputs[Flat File Destination Input].Columns[Team]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Team"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Team]"
+                      lineageId="Package\showing Premier Leagues\Union All.Outputs[Union All Output 1].Columns[Team]" />
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\Flat File Destination.Inputs[Flat File Destination Input].Columns[Team (1)]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Team (1)"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Team (1)]"
+                      lineageId="Package\showing Premier Leagues\Union All.Outputs[Union All Output 1].Columns[Team (1)]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Team]"
+                      dataType="wstr"
+                      length="255"
+                      name="Team" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Team (1)]"
+                      dataType="wstr"
+                      length="255"
+                      name="Team (1)" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\showing Premier Leagues\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\showing Premier Leagues\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\Merge Join.Inputs[Merge Join Left Input].Columns[T_team]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="T_team"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[T_team]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\showing Premier Leagues\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\Merge Join.Inputs[Merge Join Right Input].Columns[T_Team]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="T_Team"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[T_Team]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team]"
+                      name="Team"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\showing Premier Leagues\Merge Join.Inputs[Merge Join Left Input].Columns[T_team]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team (1)]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team (1)]"
+                      name="Team (1)">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\showing Premier Leagues\Merge Join.Inputs[Merge Join Right Input].Columns[T_Team]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\showing Premier Leagues\Premier Leagues 2015"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Premier Leagues 2015"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'2015$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\showing Premier Leagues\Premier Leagues 2015.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Team]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Team]"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Team]"
+                      name="Team"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Played]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Played]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Played]"
+                      name="Played"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Won]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Won]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Won]"
+                      name="Won"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Drawn]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Drawn]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Drawn]"
+                      name="Drawn"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Lost]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Lost]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Lost]"
+                      name="Lost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Points]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Points]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Points]"
+                      name="Points"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Team]"
+                      dataType="wstr"
+                      length="255"
+                      name="Team" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Played]"
+                      dataType="r8"
+                      name="Played" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Won]"
+                      dataType="r8"
+                      name="Won" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Drawn]"
+                      dataType="r8"
+                      name="Drawn" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Lost]"
+                      dataType="r8"
+                      name="Lost" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].ExternalColumns[Points]"
+                      dataType="r8"
+                      name="Points" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Team]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Team]"
+                      name="Team" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Played]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Played]"
+                      name="Played" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Won]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Won]"
+                      name="Won" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Drawn]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Drawn]"
+                      name="Drawn" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Lost]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Lost]"
+                      name="Lost" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Points]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[Points]"
+                      name="Points" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\showing Premier Leagues\Premier Leagues 2016"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Premier Leagues 2016"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'2016$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\showing Premier Leagues\Premier Leagues 2016.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Team]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Team]"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Team]"
+                      name="Team"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Played]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Played]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Played]"
+                      name="Played"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Won]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Won]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Won]"
+                      name="Won"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Drawn]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Drawn]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Drawn]"
+                      name="Drawn"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Lost]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Lost]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Lost]"
+                      name="Lost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Points]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Points]"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Points]"
+                      name="Points"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[F7]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[F7]"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[F7]"
+                      name="F7"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Team]"
+                      dataType="wstr"
+                      length="255"
+                      name="Team" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Played]"
+                      dataType="r8"
+                      name="Played" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Won]"
+                      dataType="r8"
+                      name="Won" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Drawn]"
+                      dataType="r8"
+                      name="Drawn" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Lost]"
+                      dataType="r8"
+                      name="Lost" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[Points]"
+                      dataType="r8"
+                      name="Points" />
+                    <externalMetadataColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].ExternalColumns[F7]"
+                      dataType="wstr"
+                      length="255"
+                      name="F7" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Team]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Team]"
+                      name="Team" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Played]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Played]"
+                      name="Played" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Won]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Won]"
+                      name="Won" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Drawn]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Drawn]"
+                      name="Drawn" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Lost]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Lost]"
+                      name="Lost" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Points]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[Points]"
+                      name="Points" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[F7]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[F7]"
+                      name="F7" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\showing Premier Leagues\sort by team (2015)"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="sort by team (2015)"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\showing Premier Leagues\sort by team (2015).Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Inputs[Sort Input].Columns[Team]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Team"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Team]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Inputs[Sort Input].Columns[Played]"
+                      cachedDataType="r8"
+                      cachedName="Played"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Played]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Inputs[Sort Input].Columns[Won]"
+                      cachedDataType="r8"
+                      cachedName="Won"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Won]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Inputs[Sort Input].Columns[Drawn]"
+                      cachedDataType="r8"
+                      cachedName="Drawn"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Drawn]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Inputs[Sort Input].Columns[Lost]"
+                      cachedDataType="r8"
+                      cachedName="Lost"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Lost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Inputs[Sort Input].Columns[Points]"
+                      cachedDataType="r8"
+                      cachedName="Points"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Points]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[T_Team]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[T_Team]"
+                      name="T_Team"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Team]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Played]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Played]"
+                      name="Played">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Played]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Won]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Won]"
+                      name="Won">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Won]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Drawn]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Drawn]"
+                      name="Drawn">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Drawn]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Lost]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Lost]"
+                      name="Lost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Lost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Points]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output].Columns[Points]"
+                      name="Points">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output].Columns[Points]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\showing Premier Leagues\sort by team (2016)"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="sort by team (2016)"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input].Columns[Team]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Team"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Team]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input].Columns[Played]"
+                      cachedDataType="r8"
+                      cachedName="Played"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Played]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input].Columns[Won]"
+                      cachedDataType="r8"
+                      cachedName="Won"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Won]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input].Columns[Drawn]"
+                      cachedDataType="r8"
+                      cachedName="Drawn"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Drawn]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input].Columns[Lost]"
+                      cachedDataType="r8"
+                      cachedName="Lost"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Lost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input].Columns[Points]"
+                      cachedDataType="r8"
+                      cachedName="Points"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Points]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input].Columns[F7]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F7"
+                      lineageId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[F7]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[T_team]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[T_team]"
+                      name="T_team"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Team]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Played]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Played]"
+                      name="Played">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Played]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Won]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Won]"
+                      name="Won">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Won]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Drawn]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Drawn]"
+                      name="Drawn">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Drawn]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Lost]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Lost]"
+                      name="Lost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Lost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Points]"
+                      dataType="r8"
+                      lineageId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[Points]"
+                      name="Points">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[Points]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[F7]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output].Columns[F7]"
+                      name="F7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output].Columns[F7]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\showing Premier Leagues\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\showing Premier Leagues\Union All.Inputs[Union All Input 1]"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\Union All.Inputs[Union All Input 1].Columns[Team]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Team"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\showing Premier Leagues\Union All.Outputs[Union All Output 1].Columns[Team]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\showing Premier Leagues\Union All.Inputs[Union All Input 1].Columns[Team (1)]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Team (1)"
+                      lineageId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output].Columns[Team (1)]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\showing Premier Leagues\Union All.Outputs[Union All Output 1].Columns[Team (1)]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\showing Premier Leagues\Union All.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\showing Premier Leagues\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Union All.Outputs[Union All Output 1].Columns[Team]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Union All.Outputs[Union All Output 1].Columns[Team]"
+                      name="Team" />
+                    <outputColumn
+                      refId="Package\showing Premier Leagues\Union All.Outputs[Union All Output 1].Columns[Team (1)]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\showing Premier Leagues\Union All.Outputs[Union All Output 1].Columns[Team (1)]"
+                      name="Team (1)" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\showing Premier Leagues.Paths[Excel Source Output]"
+              endId="Package\showing Premier Leagues\sort by team (2016).Inputs[Sort Input]"
+              name="Excel Source Output"
+              startId="Package\showing Premier Leagues\Premier Leagues 2016.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\showing Premier Leagues.Paths[Excel Source Output1]"
+              endId="Package\showing Premier Leagues\sort by team (2015).Inputs[Sort Input]"
+              name="Excel Source Output"
+              startId="Package\showing Premier Leagues\Premier Leagues 2015.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\showing Premier Leagues.Paths[Merge Join Output]"
+              endId="Package\showing Premier Leagues\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\showing Premier Leagues\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\showing Premier Leagues.Paths[Sort Output]"
+              endId="Package\showing Premier Leagues\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\showing Premier Leagues\sort by team (2016).Outputs[Sort Output]" />
+            <path
+              refId="Package\showing Premier Leagues.Paths[Sort Output1]"
+              endId="Package\showing Premier Leagues\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\showing Premier Leagues\sort by team (2015).Outputs[Sort Output]" />
+            <path
+              refId="Package\showing Premier Leagues.Paths[Union All Output 1]"
+              endId="Package\showing Premier Leagues\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Union All Output 1"
+              startId="Package\showing Premier Leagues\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\showing Premier Leagues.Paths[UnMatched Teams]"
+              endId="Package\showing Premier Leagues\Union All.Inputs[Union All Input 1]"
+              name="UnMatched Teams"
+              startId="Package\showing Premier Leagues\Conditional Split.Outputs[UnMatched Teams]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\showing Premier Leagues"
+          TopLeft="422.499976915619,131.733332417276" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\showing Premier Leagues">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\showing Premier Leagues\Premier Leagues 2015"
+          TopLeft="209.999988526106,58.0666662628783" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\showing Premier Leagues\Premier Leagues 2016"
+          TopLeft="679.166629558638,61.5333329054382" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\showing Premier Leagues\sort by team (2015)"
+          TopLeft="344.16664786223,183.733332055675" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\showing Premier Leagues\sort by team (2016)"
+          TopLeft="571.666635432179,190.666665340795" />
+        <EdgeLayout
+          Id="Package\showing Premier Leagues.Paths[Excel Source Output]"
+          TopLeft="770.766629558638,103.133332905438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115.09999412646,87.5333324353563"
+              Start="0,0"
+              End="-115.09999412646,80.0333324353563">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.7666662176782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.7666662176782"
+                    Point2="0,43.7666662176782"
+                    Point3="-4,43.7666662176782" />
+                  <mssgle:LineSegment
+                    End="-111.09999412646,43.7666662176782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111.09999412646,43.7666662176782"
+                    Point2="-115.09999412646,43.7666662176782"
+                    Point3="-115.09999412646,47.7666662176782" />
+                  <mssgle:LineSegment
+                    End="-115.09999412646,80.0333324353563" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\showing Premier Leagues.Paths[Excel Source Output1]"
+          TopLeft="301.599988526106,99.6666662628783">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.566659336124,84.0666657927964"
+              Start="0,0"
+              End="126.566659336124,76.5666657927964">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0333328963982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.0333328963982"
+                    Point2="0,42.0333328963982"
+                    Point3="4,42.0333328963982" />
+                  <mssgle:LineSegment
+                    End="122.566659336124,42.0333328963982" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.566659336124,42.0333328963982"
+                    Point2="126.566659336124,42.0333328963982"
+                    Point3="126.566659336124,46.0333328963982" />
+                  <mssgle:LineSegment
+                    End="126.566659336124,76.5666657927964" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\showing Premier Leagues\Merge Join"
+          TopLeft="453.333308564293,301.599997902711" />
+        <EdgeLayout
+          Id="Package\showing Premier Leagues.Paths[Sort Output]"
+          TopLeft="655.666635432179,232.266665340795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-108.199993534552,69.3333325619167"
+              Start="0,0"
+              End="-108.199993534552,61.8333325619167">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.1403310339771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.1403310339771"
+                    Point2="0,41.1403310339771"
+                    Point3="-4,41.1403310339771" />
+                  <mssgle:LineSegment
+                    End="-104.199993534552,41.1403310339771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-104.199993534552,41.1403310339771"
+                    Point2="-108.199993534552,41.1403310339771"
+                    Point3="-108.199993534552,45.1403310339771" />
+                  <mssgle:LineSegment
+                    End="-108.199993534552,61.8333325619167" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\showing Premier Leagues.Paths[Sort Output1]"
+          TopLeft="428.16664786223,225.333332055675">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.2333273687297,76.2666658470366"
+              Start="0,0"
+              End="74.2333273687297,68.7666658470366">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.2543641545399" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.2543641545399"
+                    Point2="0,45.2543641545399"
+                    Point3="4,45.2543641545399" />
+                  <mssgle:LineSegment
+                    End="70.2333273687297,45.2543641545399" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.2333273687297,45.2543641545399"
+                    Point2="74.2333273687297,45.2543641545399"
+                    Point3="74.2333273687297,49.2543641545399" />
+                  <mssgle:LineSegment
+                    End="74.2333273687297,68.7666658470366" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\showing Premier Leagues\Conditional Split"
+          TopLeft="447.499975549679,407.333330500788" />
+        <EdgeLayout
+          Id="Package\showing Premier Leagues.Paths[Merge Join Output]"
+          TopLeft="524.616642056986,343.199997902711">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.1333325980768"
+              Start="0,0"
+              End="0,56.6333325980768">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.6333325980768" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\showing Premier Leagues\Union All"
+          TopLeft="464.166641305719,510.466663116945" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\showing Premier Leagues\Flat File Destination"
+          TopLeft="432.499976369243,593.666662538383" />
+        <EdgeLayout
+          Id="Package\showing Premier Leagues.Paths[Union All Output 1]"
+          TopLeft="520.933308837481,552.066663116945">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.5999994214375"
+              Start="0,0"
+              End="0,34.0999994214375">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0999994214375" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\showing Premier Leagues.Paths[UnMatched Teams]"
+          TopLeft="524.233308427699,448.933330500788">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.5333326161572"
+              Start="0,0"
+              End="0,54.0333326161572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.0333326161572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-50.28623046875,19.0166663080786,100.5724609375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\showing Premier Leagues\Premier Leagues 2015">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\showing Premier Leagues\Premier Leagues 2016">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

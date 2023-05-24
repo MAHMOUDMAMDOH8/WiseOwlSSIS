@@ -1,0 +1,1582 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/6/2023 5:52:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-J839N2N"
+  DTS:CreatorName="DESKTOP-J839N2N\MAHMOUD"
+  DTS:DTSID="{0B1E4868-2F21-4813-BB95-27BEFCC18992}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{93D725AE-3A3A-4609-A814-D29A7A8CAA55}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C4ABD498-464B-4BBF-BB25-9FBCE66EF71D}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\SSIS\ETL(SSIS &amp; POWER QUERY)\SSIS Excersies\9 PREVIOUS VERSIONS\EX10(Life is a Rollercoaster)\Life is a Rollercoaster.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Life is a Rollercoaster"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B7EAA4B4-90BB-43CA-86AE-E0DEBE818762}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Life is a Rollercoaster"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Life is a Rollercoaster Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Coasters$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Roller Coaster]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Roller Coaster]"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Roller Coaster]"
+                      name="Roller Coaster"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Amusement Park]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Amusement Park]"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Amusement Park]"
+                      name="Amusement Park"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Type]"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Type]"
+                      name="Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Design]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Design]"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Design]"
+                      name="Design"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Opened]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Opened]"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Opened]"
+                      name="Opened"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Speed ( mph )]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Speed ( mph )]"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Speed ( mph )]"
+                      name="Speed ( mph )"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      name="Roller Coaster" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      name="Amusement Park" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      name="Design" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Opened]"
+                      dataType="r8"
+                      name="Opened" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].ExternalColumns[Speed ( mph )]"
+                      dataType="r8"
+                      name="Speed ( mph )" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Roller Coaster]"
+                      name="Roller Coaster" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Amusement Park]"
+                      name="Amusement Park" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Type]"
+                      name="Type" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Design]"
+                      name="Design" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Opened]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Opened]"
+                      name="Opened" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Speed ( mph )]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[Speed ( mph )]"
+                      name="Speed ( mph )" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Life is a Rollercoaster\recombine"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="recombine"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Roller Coaster]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Roller Coaster]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Amusement Park]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Amusement Park]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Design]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Design]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Opened]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Opened]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Speed ( mph )]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Speed ( mph )]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="Scariness"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Output].Columns[Scariness]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Scariness]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Roller Coaster]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Roller Coaster]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Amusement Park]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Amusement Park]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Design]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Design]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Opened]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Opened]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Speed ( mph )]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Speed ( mph )]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="Scariness"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Output].Columns[Scariness]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Scariness]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Roller Coaster]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Roller Coaster]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Amusement Park]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Amusement Park]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Design]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Design]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Opened]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Opened]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Speed ( mph )]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Speed ( mph )]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Scariness"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Output].Columns[Scariness]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Scariness]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Roller Coaster]"
+                      name="Roller Coaster" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Amusement Park]"
+                      name="Amusement Park" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Type]"
+                      name="Type" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Design]"
+                      name="Design" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Opened]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Opened]"
+                      name="Opened" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Speed ( mph )]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Speed ( mph )]"
+                      name="Speed ( mph )" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Scariness]"
+                      dataType="wstr"
+                      length="11"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Scariness]"
+                      name="Scariness" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Life is a Rollercoaster\set as not scary"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="set as not scary"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\set as not scary.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\set as not scary.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Output].Columns[Scariness]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="9"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Output].Columns[Scariness]"
+                      name="Scariness"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Not scary"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Not scary"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\set as not scary.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Life is a Rollercoaster\set as quite scary"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="set as quite scary"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Output].Columns[Scariness]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="11"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Output].Columns[Scariness]"
+                      name="Scariness"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Quite scary"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Quite scary"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Life is a Rollercoaster\set as scary"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="set as scary"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\set as scary.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\set as scary.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Output].Columns[Scariness]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Output].Columns[Scariness]"
+                      name="Scariness"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Very scary"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Very scary"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\set as scary.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Life is a Rollercoaster\Show"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Show"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1].Columns[Roller Coaster]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Roller Coaster"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Roller Coaster]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Roller Coaster]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1].Columns[Amusement Park]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Amusement Park"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Amusement Park]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Amusement Park]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Design]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Design]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Status"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Status]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1].Columns[Opened]"
+                      cachedDataType="r8"
+                      cachedName="Opened"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Opened]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Opened]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Speed ( mph )]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Speed ( mph )]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1].Columns[Scariness]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="Scariness"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1].Columns[Scariness]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Scariness]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Roller Coaster]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Roller Coaster]"
+                      name="Roller Coaster" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Amusement Park]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Amusement Park]"
+                      name="Amusement Park" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Type]"
+                      name="Type" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Design]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Design]"
+                      name="Design" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Opened]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Opened]"
+                      name="Opened" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Speed ( mph )]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Speed ( mph )]"
+                      name="Speed ( mph )" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Scariness]"
+                      dataType="wstr"
+                      length="11"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Show.Outputs[Union All Output 1].Columns[Scariness]"
+                      name="Scariness" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Life is a Rollercoaster\Split scary"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Split scary"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input].Columns[Design]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Design"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Design]" />
+                    <inputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input].Columns[Speed ( mph )]"
+                      cachedDataType="r8"
+                      cachedName="Speed ( mph )"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Speed ( mph )]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Very scary]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Very scary"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Speed ( mph )]} &gt; 50</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">[Speed ( mph )] &gt; 50</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Quite scary]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Quite scary"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Type]} == "Wood" || #{Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output].Columns[Design]} != "Sit Down"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Type == "Wood" || Design != "Sit Down"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Not scary]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Not scary"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Life is a Rollercoaster.Paths[Derived Column Output]"
+              endId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Life is a Rollercoaster.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Life is a Rollercoaster\set as not scary.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Life is a Rollercoaster.Paths[Derived Column Output2]"
+              endId="Package\Data Flow Life is a Rollercoaster\recombine.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Life is a Rollercoaster\set as scary.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Life is a Rollercoaster.Paths[Excel Source Output]"
+              endId="Package\Data Flow Life is a Rollercoaster\Split scary.Inputs[Conditional Split Input]"
+              name="Excel Source Output"
+              startId="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Data Flow Life is a Rollercoaster.Paths[Not scary]"
+              endId="Package\Data Flow Life is a Rollercoaster\set as not scary.Inputs[Derived Column Input]"
+              name="Not scary"
+              startId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Not scary]" />
+            <path
+              refId="Package\Data Flow Life is a Rollercoaster.Paths[Quite scary]"
+              endId="Package\Data Flow Life is a Rollercoaster\set as quite scary.Inputs[Derived Column Input]"
+              name="Quite scary"
+              startId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Quite scary]" />
+            <path
+              refId="Package\Data Flow Life is a Rollercoaster.Paths[Union All Output 1]"
+              endId="Package\Data Flow Life is a Rollercoaster\Show.Inputs[Union All Input 1]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Life is a Rollercoaster\recombine.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Data Flow Life is a Rollercoaster.Paths[Very scary]"
+              endId="Package\Data Flow Life is a Rollercoaster\set as scary.Inputs[Derived Column Input]"
+              name="Very scary"
+              startId="Package\Data Flow Life is a Rollercoaster\Split scary.Outputs[Very scary]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Data Flow Life is a Rollercoaster"
+          TopLeft="279.999984701475,55.4666662809584" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Life is a Rollercoaster">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source"
+          TopLeft="355.833313891458,75.3999994756778" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Data Flow Life is a Rollercoaster\Split scary"
+          TopLeft="399.999978144964,168.999998824795" />
+        <EdgeLayout
+          Id="Package\Data Flow Life is a Rollercoaster.Paths[Excel Source Output]"
+          TopLeft="462.916646018211,116.999999475678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.9999993491175"
+              Start="0,0"
+              End="0,44.4999993491175">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.4999993491175" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Data Flow Life is a Rollercoaster\set as scary"
+          TopLeft="93.333328233825,284.266664689912" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Data Flow Life is a Rollercoaster\set as quite scary"
+          TopLeft="381.66664581332,301.599997902711" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Data Flow Life is a Rollercoaster\set as not scary"
+          TopLeft="730.833293402362,290.333331314392" />
+        <EdgeLayout
+          Id="Package\Data Flow Life is a Rollercoaster.Paths[Very scary]"
+          TopLeft="433.599978144964,210.599998824795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-273.466649911139,73.6666658651165"
+              Start="0,0"
+              End="-273.466649911139,66.1666658651165">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5702476556603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5702476556603"
+                    Point2="0,25.5702476556603"
+                    Point3="-4,25.5702476556603" />
+                  <mssgle:LineSegment
+                    End="-269.466649911139,25.5702476556603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-269.466649911139,25.5702476556603"
+                    Point2="-273.466649911139,25.5702476556603"
+                    Point3="-273.466649911139,29.5702476556603" />
+                  <mssgle:LineSegment
+                    End="-273.466649911139,66.1666658651165" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-160.65844214307,30.5702476556603,47.850234375,11.2822265625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Life is a Rollercoaster.Paths[Quite scary]"
+          TopLeft="462.233311979142,210.599998824795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90.9999990779162"
+              Start="0,0"
+              End="0,83.4999990779162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.4999990779162" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.614453125,36.0332026639581,51.22890625,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Life is a Rollercoaster.Paths[Not scary]"
+          TopLeft="492.799978144964,210.599998824795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="313.633315257398,79.7333324895963"
+              Start="0,0"
+              End="313.633315257398,72.2333324895963">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6760327649838" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6760327649838"
+                    Point2="0,27.6760327649838"
+                    Point3="4,27.6760327649838" />
+                  <mssgle:LineSegment
+                    End="309.633315257398,27.6760327649838" />
+                  <mssgle:CubicBezierSegment
+                    Point1="309.633315257398,27.6760327649838"
+                    Point2="313.633315257398,27.6760327649838"
+                    Point3="313.633315257398,31.6760327649838" />
+                  <mssgle:LineSegment
+                    End="313.633315257398,72.2333324895963" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="135.464724034949,32.6760327649838,42.7038671875,11.2822265625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Data Flow Life is a Rollercoaster\recombine"
+          TopLeft="403.333311296173,428.999997016788" />
+        <EdgeLayout
+          Id="Package\Data Flow Life is a Rollercoaster.Paths[Derived Column Output]"
+          TopLeft="464.099978554746,343.199997902712">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85.7999991140761"
+              Start="0,0"
+              End="0,78.2999991140761">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.2999991140761" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Life is a Rollercoaster.Paths[Derived Column Output1]"
+          TopLeft="806.433293402362,331.933331314392">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-309.69998210619,97.0666657023961"
+              Start="0,0"
+              End="-309.69998210619,89.5666657023961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.3823402327761" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59.3823402327761"
+                    Point2="0,63.3823402327761"
+                    Point3="-4,63.3823402327761" />
+                  <mssgle:LineSegment
+                    End="-305.69998210619,63.3823402327761" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-305.69998210619,63.3823402327761"
+                    Point2="-309.69998210619,63.3823402327761"
+                    Point3="-309.69998210619,67.3823402327761" />
+                  <mssgle:LineSegment
+                    End="-309.69998210619,89.5666657023961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Life is a Rollercoaster.Paths[Derived Column Output2]"
+          TopLeft="160.133328233825,325.866664689912">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="276.999983062348,103.133332326876"
+              Start="0,0"
+              End="276.999983062348,95.6333323268758">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.3437365091304" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.3437365091304"
+                    Point2="0,67.3437365091304"
+                    Point3="4,67.3437365091304" />
+                  <mssgle:LineSegment
+                    End="272.999983062348,67.3437365091304" />
+                  <mssgle:CubicBezierSegment
+                    Point1="272.999983062348,67.3437365091304"
+                    Point2="276.999983062348,67.3437365091304"
+                    Point3="276.999983062348,71.3437365091304" />
+                  <mssgle:LineSegment
+                    End="276.999983062348,95.6333323268758" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="104.8,41.6"
+          Id="Package\Data Flow Life is a Rollercoaster\Show"
+          TopLeft="407.499977735183,512.199996438225" />
+        <EdgeLayout
+          Id="Package\Data Flow Life is a Rollercoaster.Paths[Union All Output 1]"
+          TopLeft="463.416644515678,470.599997016788">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.5999994214375"
+              Start="0,0"
+              End="0,34.0999994214375">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0999994214375" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,9.04999971071874,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Life is a Rollercoaster\Life is a Rollercoaster Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
